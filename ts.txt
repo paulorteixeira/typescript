@@ -1,0 +1,56 @@
+configuração inicial:
+
+mkdir novoprojeto
+git init
+npm init
+npm i typescript --save-dev
+npm i @types/node --save-dev
+criar duas pastas no root src e test
+criar tsconfig.json
+configurar pacote para utilizar paths em tsconfig.json:
+-  npm i module-alias
+-  npm i @types/module-alias --save-dev
+-  criar a pasta util em src
+-  criar arquivo module-alias.ts (utilizar path e module-alias)
+criar index.ts em src
+criar test.ts em test
+adicionar ao scripts em package.json:
+- "build":"tsc"
+- "start":"np run build && node dist/src/index.js"
+
+Setup eslint:
+instalar:
+- npm i @typescript-eslint/eslint-plugin eslint @typescript-eslint/parser  --save-dev
+criar o arquivo .eslintrc
+adicionar ao scripts em package.json:
+- "lint": "eslint ./src ./test --ext .ts"
+- "lintfix": "eslint ./src ./test --ext .ts --fix",
+
+Setup modo Dev:
+- npm i ts-node-dev --save-dev
+adicione ao scripts em package.json:
+- "start:dev": "ts-node-dev src/index.ts",
+
+Setup JEST:
+-  npm i jest ts-jest @types/jest --save-dev
+criar o arquivo de configuração global jest.config.js no root
+criar o arquivo de configuração local jest.config.js na pasta test
+criar o arquivo de teste local jest-setup.ts na pasta test
+instalar o supertest
+- npm i supertest @types/supertest --save-dev
+criar a pasta functional em test
+criar o arquivo forecast.test.ts em functional
+
+Express e Overnight
+- npm i express body-parser @overnightjs/core
+- npm i @types/express --save-dev
+configurar o module-alias.ts em src/util/
+
+criar pasta controllers em src
+criar o controller forecast.ts em src/controllers
+configurar o arquivo jest-setup.ts em test/
+
+
+
+instalar e configurar o prettier
+
